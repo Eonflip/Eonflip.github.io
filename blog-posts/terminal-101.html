@@ -10,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/eb1b0c178a.js" crossorigin="anonymous"></script>
-        <link href="../css/styles.css" rel="stylesheet">
+        <link href="../css/blog-style.css" rel="stylesheet">
         <title>About Ian</title>
     </head>
     <body>
@@ -50,26 +50,92 @@
        <section class="blog-post">
           <div class="row">
           <h1>Command Line Interface 101</h1>
+          <img src="../images/command-line-uses.png" style="width: 700px; height: auto;">
           </div>
           <div class="row">
-            <p>If you're here reading this I hope your curious about what the command line interface is
-              I certainly was before a few years ago. <br> I had used computers my entire life starting with an old computer running windows 95 my parents had lying around<br>
-              or the wonderful imac G3's that lining my elementary schools computer lab. I'm dating myself but the point is I had never touched the command line interface until about 4 years ago.
-              <br> Now I could never imagine going back.
-
+            <p>In this article we'll be covering:
             </p>
+            <div class="blog-table-contents">
+              <ul>
+                <li>What Is The Command Line Interface?</li>
+                <li>Uses For The Command Line Interface.</li>
+                <li>Common Commands In The Command Line Interface</li>
+                <li>Resources for Learning Further Learning.</li>
+              </ul>
+            </div>
             <h2>What is the command line interface?</h2>
-            <p>The command line interface is a program running on most every computer that you'll interact with. It allows you to interact at a deeper level with the computer.
-              <br>We're all used to graphical user interfaces or GUIs to manage our day to day tasks, your wonderful desktop and web browser you're reading this from right now are examples of graphical user interfaces
-              <br>The command line interface however can appear a bit more arcane such as this
+            <p>The command line interface (CLI) is an integral program running on nearly every computer you encounter.
+              Unlike the familiar graphical user interfaces(GUIs) you might be used to -
+              think of your desktop or the web browser you're using now
+              - the CLI offers a more direct way to interact with your computer's inner workings.
 
             </p>
-            <img src="../images/bash.png" style="width: 700px; height: auto;">
+            <img src="../images/gui-v-cli.png" style="width: 700px; height: auto;">
 
-            <p>This may look scary but let's break this down a bit, everything running on your computer is essentially a collection of text that gets converted into computer readable code or instructions to tell the computer what to do.
-              <br>Instead of being limited by a GUI sometimes we can get a little bit deeper with the command line interface.
-              <br>Whether your on a Windows, Mac, or Linux Machine you'll be able to access it.
+            <p><br>At first glance, the CLI can seem daunting, presenting itself as a stark, text-based environment.
+              However, this apparent complexity masks it underlying simplicity and power.
+              At it's core, every process on your computer boils down to a series of text commands, which are then translated into actions the computer understands.
+              While GUIs provide an intuitive way to perform daily tasks, they have their limitations.
+              In constrast, the CLI allows for more nuanced and direct control, offering a level of depth that GUIs often cannot match.
+              No matter if you're using Windows, Mac, or Linux the CLI is readily accessible.
+              It's a universal tool that unlocks a new dimension of computer interaction, on that may initially seem arcane but is incredibly powerful once you become familiar with it's syntax and capabilities.
             </p>
+            <h2>Uses for the Command Line Interface(CLI)</h2>
+            <img src="../images/cli.jpg" style="width: 700px; height: auto;">
+            <p> The command line interface has many uses, we'll delve into some of the more common ones here today.
+              <br>If you're still curious after this post you can do some research on some of the topics we don't cover and check out the provided resources!
+              <br>Here's a non comprehensive list of some of the common uses for the command line interface:
+              <div class="cli-uses">
+                <ul>
+                  <li><strong>File Management:</strong> </li><p>Creating, deleting, moving, and renaming files and directories</p>
+                  <li><strong>System Administraion:</strong> </li><p>Managing user accounts, setting permissions, and monitoring system resources.</p>
+                  <li><strong>Networking: </strong></li><p>Checking network configurations, managing connections, and troubleshooting network issues.</p>
+                  <li>Software Installation and Managment: </li><p>Installing, updating, and removing software packages</p>
+                  <li>Programming and Scripting: </li> <p>Writing and executing scripts to automate tasks.</p>
+                  <li>Data Processing: </li> <p>Manipulating and analyzing data files, such as text processing or batch renaming.</p>
+                  <li>Accessing Remote Systems: </li><p>Using SSH (Secure Shell) for secure remote access to other systems.</p>
+                  <li>Version Control: </li><p>Managing code versions and collaborating on software development using tools like Git.</p>
+              </ul>
+              </div>
+            </p>
+            <h2>Common Commands In The Command Line Interface</h2>
+            <p> Now that we've covered the basics lets dive into common command line interface commands!
+              now for this section you may want to follow along. To do so, please navigate to the command line interface on your computer. If you're working on 
+              a Mac or Linux machine your command line interface will be accessible through a program called "Terminal" if you're working on a Windows machine the program will be called
+              "Powershell". Once opened you should see a screen like this one:</p>
+              <img src="../images/personal-terminal.png" style="width: 700px; height: auto;">
+            <p>The format you see in my personal terminal is</p>
+            <code class="language-bash" style="background-color: #0d1117;">[root@host ~]%</code>
+            <p>So let's practice a little bit, the first command we'll try is <i><strong>ls</strong></i> which stands for list contents. 
+            This command will list out the contents of a directory or you might also know it as a folder! So let's give it a try type ls into your terminal or powershell window you should see something like this: 
+          </p>
+          <img src="../images/list_contents.png" style="width: 700px; height: auto;">
+          <p>So from the image above I see that in my home directory for my user (in this case me ianj) I have bunch of sub directories, applications, downloads, my desktop folder, etc.
+            Now I will mention that most commands have a structure, that looks something like:
+          </p>
+          <code class="language-bash" style="background-color: #0d1117;">command [OPTIONS] arguments</code>
+          <p>The [OPTIONS] tag will usually accept a flag, for example if I type in ls -al we'll see a different output that might look like this:</p>
+          <img src="../images/list-contents-al.png" style="width: 700px; height: auto;">
+          <p>Now you should notice from this image that there are some files and directories that weren't there before. This is because the -a flag and the -l flag have 
+            altered the output of the ls command. -a lists all files and sub-directories in the current directory even the hidden ones, and the -l flag shows a detailed list of information that 
+            relates to the file or directory take for example the line: 
+          </p>
+          <code class="language-bash" style="background-color: #0d1117;">drwxr-xr-x    7 ianj  staff    224 Nov 17 07:10 Programming
+          </code>
+          <p>This line shows a few things the first letter "d" tells us that this is a directory, the next 3 letters "rwx" tell us that the root user
+            has read, write and execute privelages, the next 3 "r-x" tell us only members of the group the directory belongs to can read and execute but not write.
+            and finally the last 3 "r-x" tell us that anyone can read or execute but not write.
+            <br>Next, the 7 denotes how many hard links the directory has.
+            Following that, we have the owner of the directory, and then the group the directory belongs to.
+            Next comes the size of the file in bytes, and then the date the directory was last modified. Finally the name of the directory. 
+            This format will be the same for a file except a file will be denoted with a "-" to begin with.
+          </p>
+          
+          
+
+
+
+
           </div>
        </section>
 
